@@ -29,3 +29,13 @@ test('getUsers gets a single user', function (t) {
       t.is(expected, actual)
     })
 })
+
+test('addUser adds a new user', function (t) {
+  var expected = 99927
+  return db.addUser('Precarious Jeremy', 'jeremy.likeseatingapples@hotmail.com', t.context.db)
+    .then(function (result) {
+      var actual = result[0]
+
+      t.is(actual, expected)
+    })
+})
